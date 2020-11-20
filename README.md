@@ -2,6 +2,18 @@
 
 Google News Angular Search Page
 
+## Requirements
+
+● Implement an input field to search with Google News API "everything" endpoint. API website <https://newsapi.org>
+● Search results should be limited to 20 and presented as a list.
+● Each row in the list should have two columns - title, description, author in the first column and thumbnail image in another column.
+● The layout should be responsive.
+
+## Optional Features(Extra Points)
+
+● Clicking on the thumbnail image should open a modal with the image centered both horizontally and vertically.
+● Create a button that sorts the results by title alphabetically, toggle between descending and ascending.
+
 [![time tracker](https://wakatime.com/badge/github/sergiogomes/angular-search-news.svg)](https://wakatime.com/badge/github/sergiogomes/angular-search-news)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
