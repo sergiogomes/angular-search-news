@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { QueryParams } from '../../models/query-params.model';
+import { QueryParams } from '../../models';
 
 @Component({
   selector: 'app-navbar',
@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     const objQueryParams: QueryParams = {
       q: this.searchText,
       page: 1
-    }
+    };
 
     if (this.searchText) {
       this.router.navigate(['/search'], {
