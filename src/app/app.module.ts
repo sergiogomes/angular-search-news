@@ -6,12 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoadingComponent, NavbarComponent } from './core/components';
+import { HomeComponent } from './home';
+import { SearchComponent } from './search';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    LoadingComponent
+    LoadingComponent,
+    SearchComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
