@@ -2,6 +2,8 @@
 
 Google News Angular Search Page
 
+[![time tracker](https://wakatime.com/badge/github/sergiogomes/angular-search-news.svg)](https://wakatime.com/badge/github/sergiogomes/angular-search-news)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
 ## Development server
