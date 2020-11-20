@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 import { QueryParams } from '../core/models';
@@ -15,14 +16,18 @@ export class SearchComponent implements OnInit, OnDestroy {
   public page: number;
 
   private searchingSub: Subscription;
+  private routeParamsSub: Subscription;
 
-  constructor(public service: SearchService) {
+  constructor(public service: SearchService, private route: ActivatedRoute) {
     this.searchingSub = this.service.eventSearchChanged.subscribe((params) => {
       this.mapAndSearch(params);
     });
   }
 
   ngOnInit(): void {
+    this.routeParamsSub = this.route.queryParams.subscribe((params) => {
+      this.mapAndSearch(params);
+    });
   }
 
   public mapAndSearch(params: QueryParams | any): void {
@@ -43,5 +48,6 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.searchingSub.unsubscribe();
+    this.routeParamsSub.unsubscribe();
   }
 }
