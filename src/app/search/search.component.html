@@ -1,3 +1,12 @@
 <h3>Search Page</h3>
 
-<app-results></app-results>
+<ng-section *ngFor="let item of service.items">
+  <app-results 
+    [title]="item.title"
+    [description]="item.description"
+    [author]="item.author"
+    [urlToImage]="item.urlToImage"
+    [url]="item.url"
+    [publishedAt]="item.publishedAt"
+  ></app-results>
+</ng-section>

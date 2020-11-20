@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   private searchingSub: Subscription;
 
-  constructor(private service: SearchService) {
+  constructor(public service: SearchService) {
     this.searchingSub = this.service.eventSearchChanged.subscribe((params) => {
       this.mapAndSearch(params);
     });
