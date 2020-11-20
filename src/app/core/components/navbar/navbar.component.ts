@@ -1,4 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { QueryParams } from '../../models/query-params.model';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +11,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit, OnDestroy {
   public searchText: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     // Subscribe to query string changes to update the search input value
@@ -16,7 +19,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   // Change to Search screen
   public onSearch(): void {
-    console.log(this.searchText);
+    const objQueryParams: QueryParams = {
+      q: this.searchText,
+      page: 1
+    }
+
+    if (this.searchText) {
+      this.router.navigate(['/search'], {
+        queryParams: objQueryParams
+      });
+    }
   }
 
   ngOnDestroy(): void {
