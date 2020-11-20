@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs/internal/Subscription';
 
+import { SearchService } from 'src/app/search/services';
 import { QueryParams } from '../../models';
 
 @Component({
@@ -9,12 +11,20 @@ import { QueryParams } from '../../models';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit, OnDestroy {
-  public searchText: string;
 
-  constructor(private router: Router) { }
+  public searchText: string;
+  private routeParamsSub: Subscription;
+
+  constructor(
+    private router: Router,
+    private service: SearchService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    // Subscribe to query string changes to update the search input value
+    this.routeParamsSub = this.route.queryParams.subscribe((params) => {
+      this.searchText = params.q ? params.q : this.searchText;
+    });
   }
 
   // Change to Search screen
@@ -28,10 +38,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
       this.router.navigate(['/search'], {
         queryParams: objQueryParams
       });
+      this.service.searchChanged$.next(objQueryParams);
     }
   }
 
   ngOnDestroy(): void {
-    // Unsubscribe
+    this.routeParamsSub.unsubscribe();
   }
 }

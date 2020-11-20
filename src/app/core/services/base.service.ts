@@ -8,13 +8,15 @@ import { environment } from 'src/environments/environment';
 })
 export class BaseService {
 
+  private API_KEY = `&apiKey=${environment.apiKey}`;
+
   constructor(private http: HttpClient) {}
 
   public get(url: string): any {
     // this.loading$.next(true);
     return new Promise((resolve, reject) => {
       this.http
-        .get(environment.url + url)
+        .get(environment.url + url + this.API_KEY)
         .toPromise()
         .then(
           (res) => {
