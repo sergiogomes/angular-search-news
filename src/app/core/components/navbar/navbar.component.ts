@@ -42,6 +42,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   }
 
+  public onClickHome(): void {
+    this.router.navigate(['/home']);
+  }
+
   ngOnDestroy(): void {
     this.routeParamsSub.unsubscribe();
   }
