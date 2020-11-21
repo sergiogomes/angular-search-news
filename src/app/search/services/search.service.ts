@@ -19,6 +19,11 @@ export class SearchService {
     return this.searchChanged$.asObservable();
   }
 
+  public modalHandle$: Subject<{open: boolean, article: Article}> = new Subject<{open: boolean, article: Article}>();
+  get eventModalHandle(): Observable<any> {
+    return this.modalHandle$.asObservable();
+  }
+
   constructor(private base: BaseService) {}
 
   public search(q: string, page: number, sortBy: string = 'publishedAt'): void {

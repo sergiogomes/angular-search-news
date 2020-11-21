@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoadingComponent, NavbarComponent } from './core/components';
+import { LoadingComponent, ModalComponent, NavbarComponent } from './core/components';
 import { HomeComponent } from './home';
 import { ResultsComponent } from './search/components/results';
 import { SearchComponent } from './search';
@@ -18,7 +18,8 @@ import { SearchComponent } from './search';
     LoadingComponent,
     HomeComponent,
     SearchComponent,
-    ResultsComponent
+    ResultsComponent,
+    ModalComponent
   ],
   imports: [
     ReactiveFormsModule,
