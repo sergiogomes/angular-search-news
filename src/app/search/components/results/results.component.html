@@ -9,7 +9,8 @@
     </div>
     <div class="col-md-4">
       <img [src]="urlToImage" class="card-img" [alt]="title"
-        onerror="this.src='assets/placeholder.png'">
+        onerror="this.src='assets/placeholder.png'"
+        (click)="openModal()">
     </div>
   </div>
 </div>

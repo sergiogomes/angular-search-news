@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoadingComponent, NavbarComponent } from './core/components';
+import { LoadingComponent, ModalComponent, NavbarComponent } from './core/components';
 import { HomeComponent } from './home';
 import { ResultsComponent } from './search/components/results';
 import { SearchComponent } from './search';
@@ -18,9 +18,11 @@ import { SearchComponent } from './search';
     LoadingComponent,
     HomeComponent,
     SearchComponent,
-    ResultsComponent
+    ResultsComponent,
+    ModalComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
