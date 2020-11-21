@@ -1,5 +1,27 @@
 <h3>Search Page</h3>
 
+<ng-section *ngIf="service.displaySort && !service.displayRadio">
+  <button type="button" class="btn btn-primary btn-sm" (click)="onSort()">Sort Title</button>
+</ng-section>
+
+<ng-section *ngIf="service.displaySort && service.displayRadio">
+  <div>
+    <label for="sort">Sort Title</label>
+  </div>
+  <form [formGroup]="sortForm">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-sm btn-secondary"
+        [ngClass]="sortForm.get('sort').value === 'ascending' ? 'active' : ''">
+        <input type="radio" formControlName="sort" value="ascending" id="ascending">Ascending
+      </label>
+      <label class="btn btn-sm btn-secondary"
+        [ngClass]="sortForm.get('sort').value === 'descending' ? 'active' : ''">
+        <input type="radio" formControlName="sort" value="descending" id="descending">Descending
+      </label>
+    </div>
+  </form>
+</ng-section>
+
 <ng-section *ngFor="let item of service.items">
   <app-results 
     [title]="item.title"
