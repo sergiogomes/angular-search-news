@@ -2,6 +2,10 @@
 
 Google News Angular Search Page
 
+[![time tracker](https://wakatime.com/badge/github/sergiogomes/angular-search-news.svg)](https://wakatime.com/badge/github/sergiogomes/angular-search-news)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d58d392a-ca0b-49d6-bf27-d9aabed2a4f5/deploy-status)](https://app.netlify.com/sites/angular-search-news/deploys)
+
 ## Requirements
 
 - Implement an input field to search with Google News API "everything" endpoint. API website <https://newsapi.org>
@@ -13,8 +17,6 @@ Google News Angular Search Page
 
 - Clicking on the thumbnail image should open a modal with the image centered both horizontally and vertically.
 - Create a button that sorts the results by title alphabetically, toggle between descending and ascending.
-
-[![time tracker](https://wakatime.com/badge/github/sergiogomes/angular-search-news.svg)](https://wakatime.com/badge/github/sergiogomes/angular-search-news)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
